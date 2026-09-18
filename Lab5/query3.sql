@@ -1,0 +1,2 @@
+EXPLAIN PLAN FOR SELECT /*+ NO_USE_HASH(e d) */ ename, job, sal, dname FROM emp e, dept d WHERE e.deptno = d.deptno AND NOT EXISTS (SELECT * FROM salgrade WHERE e.sal = hisal);
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY());
